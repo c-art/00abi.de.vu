@@ -1,0 +1,38 @@
+<HTML>
+<SCRIPT LANGUAGE="JavaScript" SRC="../desk/text.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" src=js/leiste.js></SCRIPT>
+<SCRIPT language="Javascript">   
+  back  =  new tdivimg('back',0,0,0,0);
+  leiste = new tdivimg('leiste',-360,20,40,0);
+</SCRIPT>
+
+<BASE target=maingale>
+<BODY bgcolor=black onload="leiste.openit(0);" onclick="if (document.all) body.focus();">
+
+ <STYLE type=text/css>
+  #leiste {position:absolute; top:10; left:-360; z-index:20;}
+  #back {position:absolute; top:0; left:0; z-index:50;}
+  </STYLE>
+  <DIV id=leiste><IMG src=img/leiste.gif Usemap=#map border=0></DIV>
+  <DIV id=back><IMG src=img/back.gif></DIV>
+
+<!--
+<SCRIPT language="Javascript">
+back.draw('img/back.gif',0,50,'');
+leiste.draw('img/leiste.gif',10,20,' border=0');
+</SCRIPT>
+-->
+
+<MAP NAME="map">
+ <AREA SHAPE=RECT COORDS="0,12,85,45" HREF=sites/bild01.html onmouseover="parent.parent.frames[3].tick.cngtext(tlg1);"></AREA>
+ <AREA SHAPE=RECT COORDS="90,12,145,45" HREF=php/show.php?pfad=eng&nr=1 onmouseover="parent.parent.frames[3].tick.cngtext(tlg2);"></AREA>
+ <AREA SHAPE=RECT COORDS="150,12,205,45" HREF=php/show.php?pfad=class&nr=1 onmouseover="parent.parent.frames[3].tick.cngtext(tlg3);"></AREA>
+ <AREA SHAPE=RECT COORDS="210,12,270,45" HREF=php/show.php?pfad=class&nr=1 onmouseover="parent.parent.frames[3].tick.cngtext(tlg4);"></AREA> 
+ <AREA SHAPE=RECT COORDS="275,12,325,45" HREF=php/show.php?pfad=school&nr=1 onmouseover="parent.parent.frames[3].tick.cngtext(tlg5);"></AREA>
+ <AREA SHAPE=RECT COORDS="330,12,380,45" HREF=php/show.php?pfad=party&nr=1 onmouseover="parent.parent.frames[3].tick.cngtext(tlg6);"></AREA>
+</MAP>
+
+
+
+</BODY>
+</HTML>

@@ -1,0 +1,45 @@
+<HTML>
+ <SCRIPT LANGUAGE="JavaScript" src=../../js/tv.js></SCRIPT>
+ <STYLE TYPE='text/css'>
+  #tv {position:absolute; top:22; left:1; z-index:10;}
+  #decks {position:absolute; top:22; left:1; z-index:30;}
+  #rahmen {position:absolute; top:12; left:0; z-index:50;}
+ </STYLE>
+ <SCRIPT LANGUAGE="JavaScript">
+  // ist dafür das der Fernseher auf uns zu geht, wird beim laden geöffnet
+  var deck1=100;
+  var deck2=100;
+  var deck3=100;
+  var deck4=100;
+  var deck5=100;
+  var deck6=100;
+  deck = new tgif('deck','bildd',6)
+  for (var i=1;i<=78;i++) {
+  // ACHTUNG: PFADANGABEN!!!!
+   if (i<10) preload('bild0'+i,'../../../img/tv0'+i+'.gif');
+   else preload('bild'+i,'../../../img/tv'+i+'.gif');
+  }
+ </SCRIPT>
+ <BODY background=../../../img/5.jpg onload="deck.open1(1);
+  <DIV id=tv>
+    <!-- Hier Inhalt des Fernseher eintragen  Höhe=85  Breite=115 -->
+    
+    <?
+     $mysql_host = "localhost"; 
+     $mysql_username = "www49"; 
+     $mysql_passwort = "nH72i"; 
+     $mysql_db = "mysql49"; 
+     mysql_connect("$mysql_host","$mysql_username","$mysql_passwort") or die ("Fehler: Konnte Verdingung nicht herstellen");
+     mysql_select_db("$mysql_db") or die ("Fehler: Konnte die Datenbank nicht auswählen");
+     $res = mysql_query("SELECT * FROM abigents WHERE no = '$aim3'") or die ("Fehler: Konnte Select nicht ausführen");
+     while($row = mysql_fetch_array($res)){
+      print "<img src=../thumbnails/$row[no].jpg height=85 width=115>\n";
+     }
+    ?>
+     <!-- <IMG src=bild00.jpg border=0 height=85 width=115> -->
+    <!-- Ende -->
+  </DIV>
+  <DIV id=decks><IMG src=../../../img/tv01.gif border=0 height=85 width=115></DIV>
+  <DIV id=rahmen><IMG src=../../../img/rahmen.gif></DIV>  <!-- Diese Grafik überlagert das Bild und macht die Ecken runder -->
+ </BODY>
+</HTML>

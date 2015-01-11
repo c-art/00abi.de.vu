@@ -1,0 +1,42 @@
+<HTML>
+<SCRIPT LANGUAGE="JavaScript" src=../spycam/js/tv.js></SCRIPT>
+
+<STYLE TYPE='text/css'>
+ #tv {position:absolute; top:22; left:1; z-index:10;}
+  #decks {position:absolute; top:22; left:1; z-index:30;}
+  #rahmen {position:absolute; top:12; left:0; z-index:50;}
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+var deck1=100;
+var deck2=100;
+var deck3=100;
+var deck4=100;
+var deck5=100;
+var deck6=100;
+
+deck = new tgif('deck','bildd',6)
+ 
+ for (var i=1;i<=6;i++) {
+	if (i<10) preload('bildd'+i,'../img/tv0'+i+'.gif');
+	else preload('bildd'+i,'../img/tv'+i+'.gif');
+}
+</SCRIPT>
+<!-- onload="deck.open1(1);-->
+<BODY background=../img/5.jpg>
+  <DIV id=rahmen><IMG src=../img/rahmen.gif></DIV>  <!-- Diese Grafik überlagert das Bild und macht die Ecken runder -->
+  <DIV id=decks><IMG src=../img/tv01.gif border=0 height=85 width=115></DIV>
+  
+<DIV id=tv>
+
+<!-- Hier Inhalt des Fernseher eintragen  Höhe=85  Breite=115 -->
+
+
+<IMG src=../img/tv2.gif height=85 width=115>
+
+
+
+<!-- Ende -->
+</DIV>
+</BODY>
+</HTML>

@@ -1,0 +1,18 @@
+<html>
+<script language="JavaScript">
+ function sendit()
+  { 
+    parent.main.frames[2].location.href='../php/thumb.php?query='+document.form1.query.value;
+  }
+</script>
+
+<body bgcolor=#000000 text=#ffffff>
+ 
+ <form name="form1">
+ <div align=right>    
+    <input name="query" style="background-color:#000000; color:#ffffff;"><input type=image border=0 src="../../sprueche/suchen.gif" onclick="sendit();"><br>
+<!--<input type=button value=suchen onclick="sendit();"><br>-->
+ </form>
+
+</body>
+</html>

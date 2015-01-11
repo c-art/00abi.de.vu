@@ -1,0 +1,24 @@
+<HTML>
+<style>
+  #load {font-family:courier new; color:00FF00; font-weight:bolder; font-size:30;}
+ </style>
+<LINK rel=stylesheet type="text/css" href="style.css">
+<script language=javascript>
+  i=0;
+  function loading(){
+  	document.all.load.innerText = 'Loading: ' + i + '%';
+  	i++;
+	if(i<100){window.setTimeout("loading()",100);}
+	else {location.href="main.html"}
+  }
+ </script>
+<BODY bgcolor=black class=body2 onLoad=loading()>
+<script language=javascript>
+   if (document.cookie=="hasseen") window.location.href="main2.html";
+ </script>
+  <table width=100% height=100%>
+   <tr><td valign=middle align=center><p id="load">Hallo</p></td></tr>
+  </table>
+ </body>
+</BODY>
+</HTML>

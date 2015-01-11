@@ -1,0 +1,34 @@
+<html>
+ <script language=javascript>
+  function load() {
+   no = document.forms[0].elements[0].selectedIndex;
+   parent.main.frames[1].location.href = (no==0)?'../index.html':'../text/briefing'+no+'.html';
+  }
+ </script>
+ <style>
+  b {font-family:verdana;font-size:12pt;font-weight:bold;text-align:rigth;color:#FFFFFF}
+  option {width:120px; background-color:#000000; font-size:9pt; font-family:Verdana; font-weight:bold; color:#33CC66;}
+ </style>
+ <body bgcolor=#000000>
+<TABLE width=100% border=0>
+<TR><TD>&nbsp;</TD></TR>
+<TR><TD valign=top align=right>
+  <form>
+   <select name=briefing size=1 align=center onChange=load()>
+    <option>Index
+    <option>Briefing #01
+    <option>Briefing #02
+    <option>Briefing #03
+    <option>Briefing #04
+    <option>Briefing #05
+    <option>Briefing #06
+    <option>Briefing #07
+    <option>Briefing #08
+    <option>Briefing #09
+    <option>Briefing #10
+    <option>Briefing #11
+    <option>Briefing #12
+    <option>Briefing #13
+   </select></form></TD></TR></TABLE>
+ </body>
+</html>

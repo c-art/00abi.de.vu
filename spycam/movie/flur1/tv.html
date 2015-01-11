@@ -1,0 +1,76 @@
+<HTML>
+<SCRIPT LANGUAGE="JavaScript" src=../../js/tv.js></SCRIPT>
+<STYLE TYPE='text/css'>
+  #tv {position:absolute; top:22; left:1; z-index:10;}
+  #decks {position:absolute; top:22; left:1; z-index:30;}
+  #rahmen {position:absolute; top:12; left:0; z-index:50;}
+</STYLE>
+
+<SCRIPT LANGUAGE="JavaScript">
+var deck1=100;
+var deck2=100;
+var deck3=100;
+var deck4=100;
+var deck5=100;
+var deck6=100;
+
+deck = new tgif('deck','bildd',6)
+ 
+ for (var i=1;i<=6;i++) {
+	if (i<10) preload('bildd'+i,'../../../img/tv0'+i+'.gif');
+	else preload('bildd'+i,'../../../img/tv'+i+'.gif');
+}
+
+<!-- Eigenliche Anzeige-->
+
+var img1=5900;
+var img2=6000;
+var img3=7000;
+var img4=6000;
+var img5=4000;
+var img6=5000;
+var img7=5040;
+var img8=4500;
+var img9=5000;
+var img10=7000;
+var img11=5800;
+var img12=5000;
+var img13=4500;
+var img14=5000;
+var img15=6000;
+var img16=9000;
+var img17=4500;
+var img18=6000;
+var img19=5500;
+var img20=8000;
+var img21=5000;
+var img22=7000;
+
+
+img = new tgif('img','bildv',22)
+ 
+ for (var i=1;i<=22;i++) {
+	if (i<10) preload('bildv'+i,'bild0'+i+'.jpg');
+	else preload('bildv'+i,'bild'+i+'.jpg');
+
+<!-- -->
+}
+
+</SCRIPT>
+
+<BODY background=../../../img/5.jpg onload="parent.frames[6].point.doit('on');deck.open1(1); img.setakt(Math.ceil(Math.random()*22)); img.loop(0);">
+
+    
+<DIV id=tv>
+
+<!-- Hier Inhalt des Fernseher eintragen  Höhe=85  Breite=115 -->
+
+<IMG src=bild01.jpg border=0 height=85 width=115>
+
+<!-- Ende -->
+</DIV>
+
+<DIV id=decks><IMG src=../../../img/tv01.gif border=0 height=85 width=115></DIV>
+<DIV id=rahmen><IMG src=../../../img/rahmen.gif></DIV>  <!-- Diese Grafik überlagert das Bild und macht die Ecken runder -->
+</BODY>
+</HTML>

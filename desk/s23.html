@@ -1,0 +1,64 @@
+<HTML>
+<SCRIPT LANGUAGE="JavaScript" SRC="ticker.js"></SCRIPT>
+<SCRIPT LANGUAGE="JavaScript" SRC="text.js"></SCRIPT>
+<STYLE TYPE='text/css'>
+  #img1  {position: absolute; z-index:100;}
+  #point {position: absolute; top:0; left:0; z-index:90; visibility:hidden; }
+  #b1 {position: absolute; top: 3; left: 58; z-index:15; visibility:hidden; }
+  #b2 {position: absolute; top: 3; left:145; z-index:16; visibility:hidden; }
+  #b3 {position: absolute; top: 2; left:227; z-index:17; visibility:hidden; }
+  #b4 {position: absolute; top:28; left: 50; z-index:18; visibility:hidden; }
+  #b5 {position: absolute; top:29; left:137; z-index:19; visibility:hidden; }
+  #b6 {position: absolute; top:29; left:221; z-index:20; visibility:hidden; }
+  #ticker {position:absolute; top:64; left:53; z-index:99;}
+   pre {font-size:9pt; font-weight:bold; color:#333300;}
+</STYLE>
+
+<SCRIPT Language="JavaScript">                                          
+function gotos(id,y,x,stat) {
+ if (document.all){
+   document.all[id].style.top = y;
+   document.all[id].style.left= x;
+   document.all[id].style.visibility=stat;
+   }
+   
+ if (document.layers){
+   document.layers[id].top = y;
+   document.layers[id].left=x;
+   if(stat=="visible") document.layers[id].visibility="show"; else document.layers[id].visibility="hide";
+  }	
+ }
+ 
+  //            (id,  text,anzeige,speed,pause,typ,ziel)            
+ tick = new ticker('tick',t0,35,40,10,1,1);
+</SCRIPT>     
+
+<BASE target=main>
+
+<BODY background=../img/4.jpg onLoad="tick.go();" onclick="if (document.all) body.focus();">
+
+<DIV id=point><IMG src="../img/point.gif"></DIV>
+
+<DIV id=b1><IMG src="../img/b1.gif"></DIV>
+<DIV id=b2><IMG src="../img/b2.gif"></DIV>
+<DIV id=b3><IMG src="../img/b3.gif"></DIV>
+<DIV id=b4><IMG src="../img/b4.gif"></DIV>
+<DIV id=b5><IMG src="../img/b5.gif"></DIV>
+<DIV id=b6><IMG src="../img/b6.gif"></DIV>
+
+<DIV id=img1>
+<IMG SRC="../img/ab.gif" USEMAP="#map" width=335 height=125 border=0>
+ <MAP NAME="map">
+  <AREA shape=polygon coords="141,29 156,4 71,8 57,28"     href=../abigent/index.html     onmouseover="gotos('b1',3,58,'visible');   tick.cngtext(tma1)"  onmouseout="gotos('b1',3,58,'hidden');" onclick="gotos('point',1,138, 'visible');"  alt="Abiturienten"  >  </AREA>
+  <AREA shape=polygon coords="144,27 230,23 239,4 158,8"   href=../abicards/index.html   onmouseover="gotos('b2',3,145,'visible');  tick.cngtext(tma2)"  onmouseout="gotos('b2',3,145,'hidden');" onclick="gotos('point',1,224, 'visible');"  alt="Abicards">       </AREA>
+  <AREA shape=polygon coords="227,28 313,24 322,4 241,7"   href=../sprueche/sprueche.html onmouseover="gotos('b3',2,227,'visible');  tick.cngtext(tma3)"  onmouseout="gotos('b3',2,227,'hidden');" onclick="gotos('point',1,309, 'visible');"  alt="Sprüche">         </AREA>
+  <AREA shape=polygon coords="49,53 133,49 136,30 53,34"   href=../galerie/index.html     onmouseover="gotos('b4',28,50,'visible');  tick.cngtext(tma4)"  onmouseout="gotos('b4',28,50,'hidden');" onclick="gotos('point',28,123,'visible');"  alt="Fotos">           </AREA>
+  <AREA shape=polygon coords="133,53 214,49 219,29 140,33" href=../secret/index.html      onmouseover="gotos('b5',29,137,'visible'); tick.cngtext(tma5)"  onmouseout="gotos('b5',29,137,'hidden');" onclick="gotos('point',28,208,'visible');"  alt="Streng Geheim!">  </AREA>
+  <AREA shape=polygon coords="212,54 304,50 307,30 222,34" href=../spycam/index.php3      onmouseover="gotos('b6',29,221,'visible'); tick.cngtext(tma6)"  onmouseout="gotos('b6',29,221,'hidden');" onclick="gotos('point',27,295,'visible');"  alt="SpyCam" >         </AREA>
+ </MAP>
+</DIV>
+
+<DIV id=ticker></DIV> <!-- Achtung 'er' muss immer angehängt werden -- id+'er' -->
+
+</BODY>
+</HTML>

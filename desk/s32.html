@@ -1,0 +1,56 @@
+<HTML>
+<BODY background=../img/9.jpg onclick="if (document.all) body.focus();">
+
+<STYLE TYPE='text/css'>
+  .link {font-family: Verdana, Arial, Helvetica, sans-serif; font-style:italic; font-size: 9pt; font-weight: bold; color: #999999; text-decoration: none; }
+  #l1  {position:absolute; left:80; top:60; z-index:110;}
+  #l2  {position:absolute; left:80; top:80; z-index:120;}
+  #l3  {position:absolute; left:80; top:100; z-index:130;}
+  #img2  {position:absolute; z-index:100;}
+  #point2 {position:absolute; left:113; top:5; z-index:90; visibility:visible;}
+</STYLE>
+
+<SCRIPT Language="JavaScript">                                          
+function tpoint(id){
+  this.id=id;
+  this.an=true;
+  this.doit=doit;
+}
+
+function doit(an) {
+ if (document.all){document.all[this.id].style.visibility= (an=='off') ? 'visible': 'hidden'; }
+ if (document.layers){document.layers[this.id].visibility= (an=='off') ? 'show' : 'hide';
+  }	
+ }
+
+function tv(){ 
+if(parent.tv.deck.now>=(parent.tv.deck.max-1)) {
+ parent.tv.deck.close(1); 
+ point.doit('off');
+ }
+else {
+ parent.tv.deck.open1(1); 
+ point.doit('on');
+ }
+}
+
+
+point = new tpoint('point2')
+</SCRIPT>   
+
+<DIV id=point2><IMG src="../img/point2.gif"></DIV>  
+
+<DIV id=img2>
+<IMG SRC="../img/ab.gif" USEMAP=#map2 width=135 height=194 border=0>
+ <MAP NAME="map2">
+  <AREA shape=circle coords="116,9,7" href="javascript:tv();"  alt="TV On/Off"></AREA>
+ </MAP>
+</DIV>
+
+<!--<DIV id=l1><A href=../briefing/index.html target=main class=link>&nbsp;&nbsp;archiv</A></DIV>
+<DIV id=l2><A href=../abicards/index.html target=main class=link>e-cards</A></DIV>
+<DIV id=l3><A href=../credits/credits.html  target=_parent class=link>&nbsp;&nbsp;credits</A></DIV>
+-->
+
+</BODY>
+</HTML>
